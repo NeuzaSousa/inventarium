@@ -11,6 +11,14 @@ My MVP will be called Inventarium and it's an app about Inventory Management.
 - Deleting list items
 - Deleting lists
 
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- ReactJs
+- React Router
+
 ## Future Features
 
 - (Add Back-End)
