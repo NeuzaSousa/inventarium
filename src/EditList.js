@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link, NavLink} from "react-router-dom";
+//import { Switch, Route, Link, NavLink} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 
 class EditList extends React.Component {
@@ -42,7 +42,7 @@ class EditList extends React.Component {
 
     
     render() {
-        let list = this.props.list;
+        //let list = this.props.list;
         let title = this.props.list.title;
         let listJsx = (
             this.props.list.name.map((n, ix) => (

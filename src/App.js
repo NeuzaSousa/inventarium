@@ -4,7 +4,7 @@ import ItemList from './ItemList';
 import InsertForm from './InsertForm';
 import NewList from './NewList';
 import { Switch, Route, NavLink} from "react-router-dom";
-import { withRouter, Router } from "react-router";
+import { withRouter } from "react-router";
 import Error404View from './Error404View';
 import EditList from './EditList';
 import Button from 'react-bootstrap/Button';
@@ -109,6 +109,7 @@ class App extends React.Component {
       this.setState({showLogIn: boolean}) 
   }
 
+  
   render() {
     
       return (
@@ -119,11 +120,11 @@ class App extends React.Component {
             <h2>Welcome to Inventarium</h2>
             <Form>
               <Form.Group controlId="formBasicEmail">
-                <Form.Label for="exampleInputEmail">Email Adress</Form.Label>
+                <Form.Label htmlFor="exampleInputEmail">Email Adress</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" />
               </Form.Group>
               <Form.Group controlId="formBasicPassword">
-                <Form.Label for="exampleInputPassword1">Password</Form.Label>
+                <Form.Label htmlFor="exampleInputPassword1">Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" />
               </Form.Group>
               <input type="checkbox" />
@@ -149,7 +150,7 @@ class App extends React.Component {
           <div className="white">
             <Navbar bg='info' expand="lg">
               <Navbar.Brand>Inventarium</Navbar.Brand>
-              <Button variant="info"><NavLink to='/' exact activeClassName='selected'>Item List</NavLink></Button>
+              <Button variant="info"><NavLink to='/' exact activeClassName='selected'>Lists</NavLink></Button>
               <Button variant="info" onClick={(e)=>this.showButtons(e)}>Show Buttons</Button>
               <Button variant="info"><NavLink to='/addlist' activeClassName='selected'>Create New List</NavLink></Button>
             </Navbar>
@@ -173,7 +174,7 @@ class App extends React.Component {
 
               <Route path='/editlist/:id' render={
                 (routeProps) => {
-                  let list = this.state.lists.find((l) => l.id == routeProps.match.params.id);
+                  let list = this.state.lists.find((l) => l.id === routeProps.match.params.id);
                   return <EditList list={list}  saveList={(i, t, n) => this.saveList(i, t, n)}
                   />
                 }

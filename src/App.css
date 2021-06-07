@@ -22,7 +22,7 @@ body {
 
 .sign-up button {
   margin-top: 10px;
-  width: 1110px;
+  max-width: 1110px;
 }
 
 h2 {
